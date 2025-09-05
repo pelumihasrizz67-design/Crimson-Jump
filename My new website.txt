@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Jump</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #f2f2f2;
+        }
+        .bangers-font {
+            font-family: 'Bangers', cursive;
+        }
+        .btn-crimson {
+            background-color: #dc2626; /* Crimson Red */
+            transition: all 0.3s ease;
+        }
+        .btn-crimson:hover {
+            background-color: #b91c1c; /* Darker Red */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .gem-card {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
+            transition: transform 0.3s ease;
+        }
+        .gem-card:hover {
+            transform: scale(1.05);
+            border-color: #dc2626;
+        }
+        .countdown-segment {
+            background-color: #1a1a1a;
+        }
+        .server-item {
+            background-color: #1a1a1a;
+            transition: transform 0.2s ease;
+        }
+        .server-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
+
+    <!-- Header -->
+    <header class="w-full py-6 bg-black bg-opacity-50">
+        <nav class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-4xl bangers-font text-red-600 tracking-wider">CRIMSON JUMP</a>
+            <div class="space-x-4 flex">
+                <a href="#rules" class="text-lg font-semibold hover:text-red-500 transition-colors">Rules</a>
+                <a href="#servers" class="text-lg font-semibold hover:text-red-500 transition-colors">Servers</a>
+                <a href="#store" class="text-lg font-semibold hover:text-red-500 transition-colors">Gem Store</a>
+                <a href="#competition" class="text-lg font-semibold hover:text-red-500 transition-colors">Competition</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow container mx-auto p-8 text-center flex flex-col items-center justify-center space-y-8">
+        <section class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl bangers-font text-red-500 mb-4 tracking-wider leading-tight">THE ULTIMATE OBBY CHALLENGE</h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                Race against 15 other players in a high-stakes, fast-paced obstacle course. Only the fastest survive, but a little strategic spending can give you a second chance.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#rules" class="btn-crimson text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl">Learn the Rules</a>
+                <a href="#servers" class="bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-600">Join a Server</a>
+            </div>
+        </section>
+
+        <!-- Annual Competition Countdown -->
+        <section id="competition" class="w-full max-w-4xl py-12 px-6 rounded-3xl bg-gray-800 shadow-2xl mt-12">
+            <h2 class="text-5xl bangers-font text-yellow-400 mb-4 tracking-wide">ANNUAL CHAMPIONSHIP</h2>
+            <p class="text-xl text-gray-300 mb-8">The 16 best players compete for ultimate glory. Get ready for the biggest event of the year!</p>
+            <div id="countdown-timer" class="flex justify-center text-4xl sm:text-5xl md:text-6xl font-bold space-x-4">
+                <div class="countdown-segment p-4 rounded-xl flex flex-col items-center">
+                    <span id="days">00</span>
+                    <span class="text-sm font-normal text-gray-400">Days</span>
+                </div>
+                <div class="countdown-segment p-4 rounded-xl flex flex-col items-center">
+                    <span id="hours">00</span>
+                    <span class="text-sm font-normal text-gray-400">Hours</span>
+                </div>
+                <div class="countdown-segment p-4 rounded-xl flex flex-col items-center">
+                    <span id="minutes">00</span>
+                    <span class="text-sm font-normal text-gray-400">Minutes</span>
+                </div>
+                <div class="countdown-segment p-4 rounded-xl flex flex-col items-center">
+                    <span id="seconds">00</span>
+                    <span class="text-sm font-normal text-gray-400">Seconds</span>
+                </div>
+            </div>
+            <div id="countdown-message" class="text-yellow-400 text-2xl font-semibold mt-4 hidden">The competition is live!</div>
+        </section>
+
+        <!-- Daily Servers Section -->
+        <section id="servers" class="w-full max-w-4xl py-12 px-6 rounded-3xl bg-gray-800 shadow-2xl mt-12 text-center">
+            <h2 class="text-5xl bangers-font text-red-500 mb-6 text-center tracking-wide">DAILY SERVERS</h2>
+            <p class="text-lg text-gray-300 text-center mb-8">Join one of our 50 daily servers and race against other players to the finish!</p>
+            <button class="btn-crimson py-4 px-12 text-xl font-bold rounded-full shadow-lg hover:shadow-xl">Join a Server</button>
+        </section>
+
+        <!-- Game Rules Section -->
+        <section id="rules" class="w-full max-w-4xl py-12 px-6 rounded-3xl bg-gray-800 shadow-2xl mt-12">
+            <h2 class="text-5xl bangers-font text-red-500 mb-6 text-center tracking-wide">GAME RULES</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-lg text-gray-300">
+                <div>
+                    <h3 class="text-3xl font-bold mb-2 text-yellow-400">The Tournament</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Anyone can play in the daily servers.</li>
+                        <li>The annual championship features the 16 best players.</li>
+                        <li>The top 8 finishers advance to the Quarter-Finals.</li>
+                        <li>The top 4 from the Quarter-Finals advance to the Semi-Finals.</li>
+                        <li>The top 2 from the Semi-Finals face off in the Grand Final.</li>
+                        <li>First one to finish wins!</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-2 text-yellow-400">The Gems</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Gems are a special currency for revives.</li>
+                        <li>If you fall off or fail, you can use 5 gems to revive at your last checkpoint.</li>
+                        <li>Don't have enough gems? You're out of the game!</li>
+                        <li>Gems can be purchased from the store below.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gem Store Section -->
+        <section id="store" class="w-full max-w-4xl py-12 px-6 rounded-3xl bg-gray-800 shadow-2xl mt-12">
+            <h2 class="text-5xl bangers-font text-red-500 mb-8 text-center tracking-wide">GEM STORE</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 100 Gems -->
+                <div class="gem-card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <span class="text-5xl mb-2">💎</span>
+                    <h3 class="text-2xl font-bold text-yellow-400">100 GEMS</h3>
+                    <p class="text-gray-400 mb-4">20 Revives</p>
+                    <p class="text-3xl font-bold text-red-500 mb-4">$10.00</p>
+                    <button class="btn-crimson w-full py-3 px-6 rounded-full font-bold">Purchase</button>
+                </div>
+                <!-- 250 Gems -->
+                <div class="gem-card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <span class="text-5xl mb-2">💎</span>
+                    <h3 class="text-2xl font-bold text-yellow-400">250 GEMS</h3>
+                    <p class="text-gray-400 mb-4">50 Revives</p>
+                    <p class="text-3xl font-bold text-red-500 mb-4">$25.00</p>
+                    <button class="btn-crimson w-full py-3 px-6 rounded-full font-bold">Purchase</button>
+                </div>
+                <!-- 500 Gems -->
+                <div class="gem-card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <span class="text-5xl mb-2">💎</span>
+                    <h3 class="text-2xl font-bold text-yellow-400">500 GEMS</h3>
+                    <p class="text-gray-400 mb-4">100 Revives</p>
+                    <p class="text-3xl font-bold text-red-500 mb-4">$50.00</p>
+                    <button class="btn-crimson w-full py-3 px-6 rounded-full font-bold">Purchase</button>
+                </div>
+                <!-- 1000 Gems -->
+                <div class="gem-card p-6 rounded-2xl flex flex-col items-center text-center">
+                    <span class="text-5xl mb-2">💎</span>
+                    <h3 class="text-2xl font-bold text-yellow-400">1000 GEMS</h3>
+                    <p class="text-gray-400 mb-4">200 Revives</p>
+                    <p class="text-3xl font-bold text-red-500 mb-4">$100.00</p>
+                    <button class="btn-crimson w-full py-3 px-6 rounded-full font-bold">Purchase</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-4 text-center text-gray-500 bg-black bg-opacity-50 mt-12">
+        <p>&copy; 2025 Crimson Jump. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Countdown Timer and Servers -->
+    <script>
+        const countdown = () => {
+            // Set the date for the annual competition (July 1st)
+            const now = new Date();
+            let targetYear = now.getFullYear();
+            const competitionDate = new Date(targetYear, 6, 1, 0, 0, 0); // Month is 0-indexed (July is 6)
+
+            // If the current date is after July 1st, set the target for next year
+            if (now.getTime() > competitionDate.getTime()) {
+                targetYear++;
+                competitionDate.setFullYear(targetYear);
+            }
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const countdownMessageEl = document.getElementById('countdown-message');
+            const countdownTimerEl = document.getElementById('countdown-timer');
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const timeLeft = competitionDate.getTime() - now;
+
+                if (timeLeft < 0) {
+                    countdownTimerEl.classList.add('hidden');
+                    countdownMessageEl.classList.remove('hidden');
+                    clearInterval(interval);
+                    return;
+                }
+
+                // Calculate days, hours, minutes, and seconds
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Display the results
+                daysEl.innerText = String(days).padStart(2, '0');
+                hoursEl.innerText = String(hours).padStart(2, '0');
+                minutesEl.innerText = String(minutes).padStart(2, '0');
+                secondsEl.innerText = String(seconds).padStart(2, '0');
+            };
+
+            // Update the countdown every second
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call to display the countdown immediately
+        };
+        
+        window.onload = () => {
+            countdown();
+        };
+    </script>
+</body>
+</html>
